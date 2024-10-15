@@ -8,29 +8,39 @@ public class p03_01Ariketa11 {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Sartu 10 pertsonen izenak arrayen gordetzeko:");
+        // Zenbat izen gorde nahi ditugu
+        System.out.println("Zenbat izen gorde nahi dituzu: ");
+        int zenbat = sc.nextInt();
+
+        // Sartu nahi ditugun izenak
+        System.out.println("Sartu izenak:");
         String izenakArray = sc.next();
 
-        String[] izenak = new String[10];
-        for (int i = 0; i < 10; i++) {
+        // Izenak arrayra pasatu eta gorde izenak.
+        String[] izenak = new String[zenbat];
+        for (int i = 0; i < zenbat; i++) {
             System.out.print((i + 1) + ". Izena: ");
             izenak[i] = sc.next();
         }
 
-        double[][] altuerak = new double[10][3];
+        double[][] altuerak = new double[zenbat][3];
 
-        for (int i = 0; i < 10; i++) {
+        // Sartu nahi ditugun altuerak izenen kopuru arabera
+        for (int i = 0; i < zenbat; i++) {
             System.out.println(izenak[i] + "ren hiru altuera altuak sartzeko:");
             for (int j = 0; j < 3; j++) {
                 System.out.print((j + 1) + ". Altuera: ");
                 altuerak[i][j] = sc.nextDouble();
             }
         }
-        for (int i = 0; i < 10; i++) {
+
+        // Batez besteko altuera kalkulatu eta erakutsi
+        for (int i = 0; i < zenbat; i++) {
             double altuenBatezBestekoa = 0;
             for (int j = 0; j < 3; j++) {
                 altuenBatezBestekoa += altuerak[i][j];
             }
+
             double altuenBatezBesteko = altuenBatezBestekoa / 3;
             System.out.println(izenak[i] + "en batez bestekoak " + altuenBatezBesteko + " metro da.");
         }
@@ -39,10 +49,11 @@ public class p03_01Ariketa11 {
         double[] batezBestekoak = new double[3];
         for (int j = 0; j < 3; j++) {
             double altuenBatezBestekoa = 0;
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < zenbat; i++) {
                 altuenBatezBestekoa += altuerak[i][j];
             }
-            batezBestekoak[j] = altuenBatezBestekoa / 10;
+
+            batezBestekoak[j] = altuenBatezBestekoa / zenbat;
         }
 
         // Pantailan hiru altuera altuen batez bestekoak erakutsi

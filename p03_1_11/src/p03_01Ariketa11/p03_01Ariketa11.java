@@ -19,6 +19,7 @@ public class p03_01Ariketa11 {
                 altuerak[i][j] = sc.nextDouble();
             }
         }
+        
         for (int i = 0; i < 10; i++) {
             double altuenBatezBestekoa = 0;
             for (int j = 0; j < 3; j++) {
